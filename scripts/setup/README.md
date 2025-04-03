@@ -23,6 +23,19 @@ Add-DnsServerResourceRecordA -Name "MasterVM0x" -ZoneName "ad.masterlab.local" -
 # On the server, join it to the domain using the domain admin credentials
 Add-Computer -DomainName "ad.masterlab.local" -Credential masterlab\Administrator -Restart
 ```
+## Install IIS
+```powershell
+# Install features
+Install-WindowsFeature -Name Web-Server -IncludeManagementTools # Install IIS
+Install-WindowsFeature -Name Web-Asp-Net45 # Install ASP.NET 4.8
+
+# Verify features
+Get-WindowsFeature -Name 'Web-Server', 'Web-Asp-Net45' |
+Select-Object -Property DisplayName, Installed
+
+# Restart server if necessary
+Restart-Computer -Force
+```
 
 # C2 Server setup
 * Basic Kali Linux install
