@@ -1,0 +1,11 @@
+<Sysmon schemaversion="4.82">
+  <!-- Capture all hashes -->
+  <HashAlgorithms>*</HashAlgorithms>
+  <EventFiltering>
+    <ProcessCreate onmatch="exclude"></DriverLoad>
+    <ProcessAccess onmatch="exclude"></DriverLoad>
+    <ProcessTerminate onmatch="exclude"></DriverLoad>
+    <DriverLoad onmatch="exclude"></DriverLoad>
+    <ImageLoad onmatch="exclude"></DriverLoad>
+  </EventFiltering>
+</Sysmon>
