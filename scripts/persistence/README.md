@@ -1,5 +1,5 @@
 # Serving of files
-All files to be downloaded using the addPersistence scripts was server on the Linux server using a simple python webserver
+All files to be downloaded using the addPersistence scripts was served on the Linux server using a simple python webserver
 ```bash
 mkdir fileshare
 cd fileshare
